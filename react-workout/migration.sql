@@ -7,3 +7,4 @@ CREATE TABLE workouts (
 );
 
 INSERT INTO workouts(workout, amount)VALUES('bench', '4 sets, 10 reps');
+INSERT INTO workouts(workout, amount)VALUES('incline dubmbell press', '4 sets, 10 reps');
