@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
+import Header from './components/Header.js';
+import Allwork from './components/Allwork.js';
 
 function App() {
+  const [works, setWorks] = useState([
+    {
+     id: 5,
+    workout: 'shoulder press',
+    amount: '4 sets 10 reps'
+    },
+    {
+     id: 6,
+     workout: 'side delt raises',
+     amount: '4 sets of 10'
+    }
+]
+)
+
+
+//delete workout
+const deleteWorkout = (id) => {
+  console.log('delete', id);
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+      <Allwork works={works} onDelete={deleteWorkout}/>
     </div>
   );
 }

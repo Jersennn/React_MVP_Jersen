@@ -1,6 +1,10 @@
 import express from "express";
+// require('express');
+// require('postgres');
+// require('dotenv');
 import postgres from "postgres";
 import dotenv from "dotenv";
+
 
 dotenv.config();
 
