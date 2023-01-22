@@ -6,35 +6,46 @@ import Addwork from './components/Addwork.js';
 
 function App() {
   const [showAddWork, setShowAddWork] = useState(false)
-  const [works, setWorks] = useState([
-    {
-     id: 5,
-    workout: 'shoulder press',
-    amount: '4 sets, 10 reps',
-    reminder: false
-    },
-    {
-     id: 6,
-     workout: 'side delt raises',
-     amount: '4 sets, 10 reps',
-     reminder: false
+  const [works, setWorks] = useState([])
+  useEffect(() => {
+    const getWorks = async () => {
+      const worksFromServ = await fetchWorks()
+      setWorks(worksFromServ)
     }
-    ]
-  )
+    getWorks()
+  }, [])
 
+  //fetch data from backend
+  const fetchWorks = async () => {
+    const res = await fetch('http://localhost:3002/workouts')
+    const data = await res.json()
+    return data
+  }
 
 // add workout
-const addWorkout = (work) => {
-  const id = Math.floor(Math.random() * 10000 + 1)
-  console.log(id, work)
-  const newWork = {id, ...work}
-  setWorks([...works, newWork])
+const addWorkout = async (work) => {
+  const res = await fetch('http://localhost:3002/workouts', {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(work)
+  })
+  const data = await res.json()
+  setWorks([...works, data])
+  // const id = Math.floor(Math.random() * 10000 + 1)
+  // console.log(id, work)
+  // const newWork = {id, ...work}
+  // setWorks([...works, newWork])
 }
 
 
 //delete workout
-const deleteWorkout = (id) => {
-  setWorks(works.filter((work) => work.workout !== 
+const deleteWorkout = async (id) => {
+  await fetch(`http://localhost:3002/workouts/${id}`, {
+  method: 'DELETE'
+  })
+  setWorks(works.filter((work) => work.id !== 
   id))}
 
 // toggle reminder

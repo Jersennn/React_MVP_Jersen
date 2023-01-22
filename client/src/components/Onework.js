@@ -9,7 +9,7 @@ const Onework = ({work, onDelete, onToggle}) => {
      onToggle(work.id)}>
       <h3>{work.workout} <FaTimes 
       style={{color: 'red', cursor: 'pointer'}}
-      onClick={() => onDelete(work.workout)}
+      onClick={() => onDelete(work.id)}
       />
       </h3>
       <p>{work.amount}</p>

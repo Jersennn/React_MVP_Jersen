@@ -1,7 +1,7 @@
 import express from "express";
 import postgres from "postgres";
 import dotenv from "dotenv";
-
+import cors from 'cors';
 
 dotenv.config();
 
@@ -10,6 +10,7 @@ const sql = postgres({database: "workout"});
 const server = express();
 const port = 3002;
 server.use(express.json());
+server.use(cors());
 
 // accept a get request
 server.get("/workouts", (req, res, next) => {
