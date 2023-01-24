@@ -33,10 +33,6 @@ const addWorkout = async (work) => {
   })
   const data = await res.json()
   setWorks([...works, data])
-  // const id = Math.floor(Math.random() * 10000 + 1)
-  // console.log(id, work)
-  // const newWork = {id, ...work}
-  // setWorks([...works, newWork])
 }
 
 
