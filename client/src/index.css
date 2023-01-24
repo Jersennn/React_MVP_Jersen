@@ -6,16 +6,28 @@
   padding: 0;
 }
 
+
+#root {
+  background-color: aquamarine;
+}
+
 body {
+  background-image: url("https://ih1.redbubble.net/image.1981641438.8357/fposter,small,wall_texture,product,750x1000.u1.jpg");
+  background-repeat: no-repeat;
+  float:right;
+  background-position:absolute;
+  background-color: rgb(224, 224, 224);
   font-family: 'Poppins', sans-serif;
 }
 
 .container {
+  background-color: rgb(209, 206, 206);
+  float:left;
   max-width: 500px;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 1px solid black;
   padding: 30px;
   border-radius: 5px;
 }
@@ -51,11 +63,14 @@ body {
 
 .btn-block {
   display: block;
-  width: 100%;
+  width: 50%;
+  background-color: gray;
+  border: 2px solid black;
 }
 
 .task {
-  background: #f4f4f4;
+  /* background: #f4f4f4; */
+  background-color: rgb(131, 130, 130);
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;

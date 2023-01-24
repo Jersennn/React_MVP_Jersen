@@ -6,5 +6,5 @@ CREATE TABLE workouts (
     amount TEXT
 );
 
-INSERT INTO workouts(workout, amount)VALUES('bench', '4 sets, 10 reps');
-INSERT INTO workouts(workout, amount)VALUES('incline dubmbell press', '4 sets, 10 reps');
+INSERT INTO workouts(workout, amount)VALUES('bench', '1 warm up set, 3 working sets');
+INSERT INTO workouts(workout, amount)VALUES('incline dubmbell press', '1 warm up set, 3 working sets increasing weight each set');
